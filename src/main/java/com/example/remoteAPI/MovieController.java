@@ -38,4 +38,11 @@ public class MovieController {
         MovieResponse response = restTemplate.getForObject(url, MovieResponse.class);
         return response;
     }
+
+    @GetMapping("/getStudent/{id}")
+    public Object getStudent(@PathVariable("id") int regNo) {
+        String url = "http://localhost:9999/Student/getByPath/" + regNo;
+        Object response = restTemplate.getForObject(url, Object.class);
+        return response;
+    }
 }
